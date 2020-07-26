@@ -1,4 +1,4 @@
-class Staff::Authenticator
+class Admin::Authenticator
   def initialize(staff_member)
     @staff_member = staff_member
   end
