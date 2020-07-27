@@ -1,5 +1,7 @@
 <header>
   <span class="logo-mark">BAUKIS2</span>
+  <%= content_tag(:spen,flash.notice, class: "notice") if flash.notice %>
+  <%= content_tag(:spen,flash.alert, class: "alert") if flash.alert %>
   <%=
     if current_staff_member
       link_to "ログアウト", :admin_session, method: :delete
