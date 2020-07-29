@@ -1,5 +1,5 @@
 class Admin::LoginForm
-  include AcitveModel::Model
+  include ActiveModel::Model
 
   attr_accessor :email, :password
 end
