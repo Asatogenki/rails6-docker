@@ -7,4 +7,3 @@ class Admin::TopController < Admin::Base
     end
   end
 end
-

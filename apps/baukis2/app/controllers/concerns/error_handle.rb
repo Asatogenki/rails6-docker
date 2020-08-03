@@ -8,6 +8,10 @@ module ErrorHandlers
     rescue_from ActiveRecord::RecordNotFound, with: :rescue404
   end
 
+  private def rescue400(e)
+    render "error/bad_request", status: 400
+  end
+
   private def rescue403(e)
     @exception = e
     render "errors/forbidden", status: 403
