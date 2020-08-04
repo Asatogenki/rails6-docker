@@ -9,7 +9,7 @@ module ErrorHandlers
   end
 
   private def rescue400(e)
-    render "error/bad_request", status: 400
+    render "errors/bad_request", status: 400
   end
 
   private def rescue403(e)
