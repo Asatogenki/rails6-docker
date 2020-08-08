@@ -218,7 +218,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    valid_email2 (3.2.4)
+    valid_email2 (3.3.0)
       activemodel (>= 3.2)
       mail (~> 2.5)
     web-console (4.0.4)

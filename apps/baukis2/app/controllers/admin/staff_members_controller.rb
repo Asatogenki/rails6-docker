@@ -4,7 +4,7 @@ class Admin::StaffMembersController < Admin::Base
   end
 
   def show
-    staff_member = StaffMember.find_by(params[:id])
+    staff_member = StaffMember.find(params[:id])
     redirect_to [ :edit, :admin, staff_member ]
   end
 
@@ -30,7 +30,7 @@ class Admin::StaffMembersController < Admin::Base
     @staff_member = StaffMember.find(params[:id])
     @staff_member.assign_attributes(staff_member_params)
     if @staff_member.save
-      flash.notice = "職員アカウントを更新しました"
+      flash.notice = "職員アカウントを更新しました。"
       redirect_to :admin_staff_members
     else
       render action: "edit"
@@ -48,7 +48,7 @@ class Admin::StaffMembersController < Admin::Base
   def destroy
     staff_member = StaffMember.find(params[:id])
     staff_member.destroy!
-    flash.notice = "職員アカウントを解除しました"
+    flash.notice = "職員アカウントを削除しました。"
     redirect_to :admin_staff_members
   end
 end
