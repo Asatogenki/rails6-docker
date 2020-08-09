@@ -1,7 +1,7 @@
 class Admin::Base < ApplicationController
   before_action :authorize
   before_action :check_account
-  # before_action :check_timeout
+  before_action :check_timeout
 
   private def current_administrator
     if session[:administrator_id]
@@ -36,7 +36,7 @@ class Admin::Base < ApplicationController
       else
         session.delete(:administrator_id)
         flash.alert = "セッションがタイムアウトしました。"
-        redirect_to :admin_login
+        redirect_to :admin_root
       end
     end
   end
