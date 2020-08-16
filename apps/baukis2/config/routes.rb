@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resource :session, only: [ :create, :destroy ]
       resource :account, except: [ :new, :create, :destroy ]
       resource :password, only: [ :show, :edit, :update ]
+      resource :customers
     end
   end
 
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
 
   constraints host: config[:customer][:host] do
     namespace :customer, path: config[:customer][:path] do
-       root "top#index"
+      root "top#index"
     end
   end
 end

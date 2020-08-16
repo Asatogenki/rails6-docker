@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2020_08_15_103132) do
     t.bigint "customer_id", null: false
     t.string "type", null: false
     t.string "postal_code", null: false
-    t.string "prefeeture", null: false
+    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address1", null: false
     t.string "address2", null: false
-    t.string "conpany_name", default: "", null: false
+    t.string "company_name", default: "", null: false
     t.string "division", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,11 +48,9 @@ ActiveRecord::Schema.define(version: 2020_08_15_103132) do
     t.string "given_name_kana", null: false
     t.string "gender"
     t.date "birthday"
-    t.string "hashed_pas"
+    t.string "hashed_password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "lower((email)::text)", name: "index_customers_on_LOWER_email", unique: true
-    t.index ["family_name_kana", "given_name_kana"], name: "index_customers_on_family_name_kana_and_given_name_kana"
   end
 
   create_table "staff_events", force: :cascade do |t|
