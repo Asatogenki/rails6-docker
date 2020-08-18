@@ -9,7 +9,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :address1, null: false     #町域、番地等
       t.string :address2, null: false     #建物名、部屋番号等
       t.string :company_name, null: false, default: ""      #会社名
-      t.string :division, null: false, default: ""      #部署名
+      t.string :division_name, null: false, default: ""      #部署名
 
       t.timestamps
     end

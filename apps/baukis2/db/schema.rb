@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_103132) do
     t.string "address1", null: false
     t.string "address2", null: false
     t.string "company_name", default: "", null: false
-    t.string "division", default: "", null: false
+    t.string "division_name", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_addresses_on_customer_id"
