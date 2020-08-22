@@ -2,6 +2,7 @@ require "rails_helper"
 
 feature "職員による顧客管理" do
   include FeaturesSpecHelper
+
   let(:staff_member) { create(:staff_member) }
   let!(:customer) { create(:customer) }
 
