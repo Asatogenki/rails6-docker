@@ -10,6 +10,7 @@ feature "職員による顧客管理" do
     switch_namespace(:staff)
     login_as_staff_member(staff_member)
   end
+
   scenario "職員が顧客（基本情報のみ）を追加する" do
     click_link "顧客管理"
     first("div.links").click_link "新規登録"
@@ -23,12 +24,14 @@ feature "職員による顧客管理" do
     choose "女性"
     click_button "登録"
 
+    new_customer = Customer.order(:id).last
     expect(new_customer.email).to eq("test@example.jp")
     expect(new_customer.birthday).to eq(Date.new(1970,1,1))
     expect(new_customer.gender).to eq("female")
-    expect(new_customer.customer.home_address).to be_nil
-    expect(new_customer.customer.work_address).to be_nil
+    expect(new_customer.home_address).to be_nil
+    expect(new_customer.work_address).to be_nil
   end
+
   scenario "職員が顧客、自宅住所、勤務先を追加する" do
     click_link "顧客管理"
     first("div.links").click_link "新規登録"
@@ -48,7 +51,7 @@ feature "職員による顧客管理" do
       fill_in "町域、番地等", with: "千代田 1-1-1"
       fill_in "建物名、部屋番号等", with: ""
     end
-     check "勤務先を入力する"
+      check "勤務先を入力する"
     within("fieldset#work-address-fields") do
       fill_in "会社名", with: "テスト"
       fill_in "部署名", with: ""
